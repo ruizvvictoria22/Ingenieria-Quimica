@@ -1,0 +1,171 @@
+:root{
+  --bg: #f5f7fa;
+  --text: #263238;
+  --blue-unlocked: #07428F; /* desbloqueada */
+  --blue-locked: #E3F2FD;   /* bloqueada */
+  --green-approved: #0082B2; /* aprobada */
+  --card-radius: 10px;
+  --gap: 14px;
+  --max-width: 1100px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:18px;
+}
+
+.top{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:8px;
+}
+.title h1{margin:0;color:var(--blue-unlocked)}
+.subtitle{margin:2px 0 0; font-size:13px; color:#556}
+
+.controls{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.controls button{
+  background:transparent;
+  border:2px solid var(--blue-unlocked);
+  color:var(--blue-unlocked);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+.controls button:hover{background:var(--blue-unlocked); color:white}
+
+.legend{font-size:13px; color:#556}
+.dot{display:inline-block; width:14px; height:14px; border-radius:4px; margin-right:6px; vertical-align:middle}
+.lock{background:var(--blue-locked); border:1px solid #cfe7ff}
+.unlock{background:var(--blue-unlocked)}
+.done{background:var(--green-approved)}
+
+.plan-preview{
+  width:100%;
+  max-width:var(--max-width);
+  margin:14px 0;
+  background: white;
+  border-radius:var(--card-radius);
+  padding:10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+.plan-preview img{
+  width:100%;
+  display:block;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+/* Levels container */
+#levels-container{
+  width:100%;
+  max-width:var(--max-width);
+}
+
+/* Level title */
+.level-title{
+  margin-top:22px;
+  margin-bottom:8px;
+  color:#1565c0;
+  font-size:18px;
+  font-weight:700;
+}
+
+/* Grid of courses */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap:var(--gap);
+}
+
+/* Course card common */
+.course{
+  padding:14px;
+  border-radius:var(--card-radius);
+  min-height:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  user-select:none;
+  cursor:pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  border:2px solid transparent;
+}
+
+/* small id on top-left */
+.course .id{
+  font-size:12px;
+  opacity:0.85;
+  margin-bottom:6px;
+}
+
+/* locked state */
+.locked{
+  background:var(--blue-locked);
+  color:#345;
+  text-decoration:line-through;
+  border-style:solid;
+  border-color: #cfe7ff;
+}
+
+/* unlocked (no aprobar) */
+.unlocked{
+  background:linear-gradient(180deg, rgba(7,66,143,0.12), rgba(7,66,143,0.06));
+  color:var(--blue-unlocked);
+  border:2px solid rgba(7,66,143,0.12);
+  text-decoration:none;
+}
+
+/* approved */
+.approved{
+  background:linear-gradient(180deg, rgba(0,130,178,0.12), rgba(0,130,178,0.06));
+  color:var(--green-approved);
+  border:2px solid rgba(0,130,178,0.16);
+  text-decoration:none;
+}
+
+/* Hover effect for clickable (unlocked/approved) */
+.course.unlocked:hover,
+.course.approved:hover{
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Course title */
+.course .name{
+  font-weight:700;
+  font-size:15px;
+  line-height:1.2;
+}
+
+/* correlativas small text */
+.course .reqs{
+  margin-top:8px;
+  font-size:12px;
+  color:#445;
+  opacity:0.9;
+}
+
+/* footer */
+.foot{
+  width:100%;
+  max-width:var(--max-width);
+  margin-top:24px;
+  padding:12px;
+  color:#445;
+  font-size:13px;
+  text-align:center;
+}
+.foot .small{font-size:12px; color:#667}
