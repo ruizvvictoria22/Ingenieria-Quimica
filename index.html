@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Malla Interactiva - Ing. Química</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="title">
+      <h1>Malla Interactiva — Ingeniería Química</h1>
+      <p class="subtitle">Progreso guardado en tu navegador (localStorage)</p>
+    </div>
+    <div class="controls">
+      <button id="resetBtn" title="Resetear progreso">Resetear progreso</button>
+      <small class="legend"><span class="dot lock"></span> Bloqueada &nbsp; <span class="dot unlock"></span> Desbloqueada &nbsp; <span class="dot done"></span> Aprobada</small>
+    </div>
+  </header>
+
+  <!-- Imagen del plan (reemplazar por plan.jpeg en el repo si subes la imagen) -->
+  <div class="plan-preview">
+    <img id="plan-img" src="/mnt/data/251B01B7-7A88-4963-A6ED-46284459CF74.jpeg" alt="Plan de estudios" />
+  </div>
+
+  <main id="levels-container"></main>
+
+  <footer class="foot">
+    <p>Usuario GitHub: <b>ruizvvictoria22</b> · Repo: <b>Ing.Quimica</b></p>
+    <p>Para publicar: Settings → Pages → Branch: <code>main</code> → Folder: <code>/ (root)</code></p>
+    <p class="small">Click en una materia desbloqueada para marcarla como aprobada / desaprobada.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
